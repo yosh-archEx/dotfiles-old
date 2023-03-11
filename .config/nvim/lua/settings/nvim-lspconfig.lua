@@ -34,7 +34,7 @@ require('lspconfig').elixirls.setup {
   capabilities = capabilities,
 }
 
--- Configure Elixir-ls
+-- Configure rust-analyzer
 require('lspconfig').rust_analyzer.setup {
   on_attach = on_attach,
   cmd = { "/home/elixir/tools/lsp/rust-analyzer" },
