@@ -30,14 +30,14 @@ end
 -- Configure Elixir-ls
 require('lspconfig').elixirls.setup {
   on_attach = on_attach,
-  cmd = { "/home/elixir/tools/lsp/elixir-ls/language_server.sh" },
+  cmd = { "/home/elixir/.tool/lsp/elixir-ls/language_server.sh" },
   capabilities = capabilities,
 }
 
 -- Configure rust-analyzer
 require('lspconfig').rust_analyzer.setup {
   on_attach = on_attach,
-  cmd = { "/home/elixir/tools/lsp/rust-analyzer" },
+  cmd = { "/home/elixir/.tool/lsp/rust-analyzer" },
 }
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
