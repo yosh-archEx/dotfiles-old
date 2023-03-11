@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'Adding asdf-vm plugins'
 
-declare  plugins=(Erlang Elixir NodeJS)
+declare  plugins=(Erlang Elixir NodeJS Terraform)
 declare -r cmd_install_plugin="asdf plugin add {PLUGIN_NAME}"
 declare -r cmd_update_plugins="asdf plugin update --all"
 declare -r cmd_remove_package="asdf uninstall {PACKAGE_NAME} {PACKAGE_VERSION}"
@@ -24,6 +24,7 @@ function add_latest_package() { #name=$1
 
 function remove_package() {
   local installed_package=$(asdf list $1)
+  echo installed_package
   if [[ ! $no_package_mensage =~ "${installed_package}" ]]; then
     local cmd_replace_package=${cmd_remove_package/\{PACKAGE_NAME\}/${1,,}}
     eval ${cmd_replace_package/\{PACKAGE_VERSION\}/${installed_package#*\*}}
@@ -36,3 +37,4 @@ do
   remove_package ${plugin}
   add_latest_package ${plugin}
 done
+
