@@ -4,6 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Font
+
+font pango: mononoki Nerd Font Regular 11
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
