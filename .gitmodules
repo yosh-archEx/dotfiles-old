@@ -1,3 +1,6 @@
 [submodule ".tool/elixir-ls"]
 	path = .tool/elixir-ls
 	url = https://github.com/elixir-lsp/elixir-ls.git
+[submodule ".tool/lsp/elixir-ls"]
+	path = .tool/lsp/elixir-ls
+	url = https://github.com/elixir-lsp/elixir-ls.git

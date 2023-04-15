@@ -30,5 +30,7 @@
 !.local/share/fonts/**
 
 !.tool
-!.tool/**
+.tool/**
+!.tool/install-asdf-plugins.sh
 .tool/echo
+.tool/lsp
