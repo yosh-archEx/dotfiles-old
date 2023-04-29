@@ -32,6 +32,13 @@ require('lspconfig').elixirls.setup {
   on_attach = on_attach,
   cmd = { "/home/archex/.tool/lsp/elixir-ls/language_server.sh" },
   capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  elixirLS = {
+    dialyzerEnabled = false,
+    fetchDeps = false,
+  };
 }
 
 -- Configure rust-analyzer

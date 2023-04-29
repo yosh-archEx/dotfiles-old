@@ -1,4 +1,6 @@
+*
 **
+**/**
 .ssh
 
 !.gitignore
@@ -34,3 +36,4 @@
 !.tool/install-asdf-plugins.sh
 .tool/echo
 .tool/lsp
+
