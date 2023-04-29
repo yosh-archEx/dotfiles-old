@@ -1,4 +1,18 @@
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+  
+  vim.keymap.set('n', ' t', "<cmd>:NvimTreeToggle<CR>", { noremap = true, silent = true })
+  vim.keymap.set('n', ' T', "<cmd>:NvimTreeFindFile<CR>", { noremap = true, silent = true })
+end
+
 require("nvim-tree").setup({
+  on_attach = on_attach,
   sort_by = "case_sensitive",
   view = {
     adaptive_size = true,
@@ -17,5 +31,3 @@ require("nvim-tree").setup({
   },
 })
 
-vim.api.nvim_set_keymap('n', ' t', "<cmd>:NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ' T', "<cmd>:NvimTreeFindFile<CR>", { noremap = true, silent = true })
